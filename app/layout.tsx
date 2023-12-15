@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ClerkProvider } from '@clerk/nextjs'
 import { Montserrat } from 'next/font/google'
 import './globals.css'
 
@@ -9,8 +10,8 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: 'Eventsaver',
-  description: 'Eventsaver is a platform for event tracking and management.',
+  title: 'Evently',
+  description: 'Evently is a platform for event tracking and management.',
   icons: {
     icon: '/assets/images/logo.svg'
   }
@@ -22,8 +23,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={montserrat.variable}>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={montserrat.variable}>{children}</body>
+      </html>
+    </ClerkProvider>
   )
 }
