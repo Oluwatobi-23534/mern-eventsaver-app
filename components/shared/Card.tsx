@@ -40,9 +40,12 @@ const Card = ({ event, hasOrderLink, hidePrice }: CardProps) => {
                         {event.isFree ? "Free" : `$${event.price}`}
                     </span>
 
-                    <p className='p-semibold-14 w-min rounded-full bg-grey-500/10 px-4 py-1 text-grey-500'>
+                    <p className='inline-block text-sm font-semibold rounded-full bg-gray-500 bg-opacity-10 px-4 py-1 text-gray-500 line-clamp-1 overflow-ellipsis overflow-hidden whitespace-nowrap items-center'>
                         {event.category.name}
                     </p>
+
+
+
                 </div>}
 
                 <p className='p-medium-16 p-medium-18 text-grey-500'>
